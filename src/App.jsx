@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 const jokes = [
@@ -14,10 +13,9 @@ const jokes = [
   { text: "Joe brought a blanket to Congress. Says it helps with 'executive comfort.'", img: "joe-blanket.png" }
 ];
 
-const baseUrl = import.meta.env.BASE_URL;
-
 function App() {
   const [jokeIndex, setJokeIndex] = useState(0);
+  const baseUrl = import.meta.env.BASE_URL;
 
   const nextJoke = () => {
     let newIndex;
@@ -33,7 +31,11 @@ function App() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-white p-4">
       <div className="max-w-lg w-full shadow-xl rounded-2xl overflow-hidden bg-gray-100">
         <div className="p-6 flex flex-col items-center">
-          <img src={`${baseUrl}${img}`} alt="Meme" className="rounded-xl object-contain max-h-64"/>
+          <img
+            src={`${baseUrl}${img}`}
+            alt="Sleepy Joe Meme"
+            className="mb-4 rounded-xl max-h-64 object-contain"
+          />
           <p className="text-center text-lg font-semibold text-black">{text}</p>
         </div>
       </div>
